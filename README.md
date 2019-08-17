@@ -16,6 +16,10 @@ As always in create-react-app projects:
 npm install && npm start
 ```
 
-## [Link to heroku!]()
+## [Link to heroku!](https://cryptic-fjord-88115.herokuapp.com/)
 
 ## Screenshots
+
+![Screenshot in iPhone SE mode](./screenshot_iPhoneSE.png)
+
+![Screenshot in Desktop mode](./screenshot_desktop.png)
