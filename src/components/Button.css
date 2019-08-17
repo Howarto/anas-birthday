@@ -1,0 +1,28 @@
+.Button {
+  background-color: #f5f5f5;
+  min-width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+  user-select: none;
+}
+
+.Button~.Button {
+  margin-left: 8px;
+}
+
+.Button:hover {
+  background-color: #FFFFFF;
+}
+
+.Button:active {
+  background-color: #c4c4c4;
+}
+
+.Button__text {
+  font-size: 16px;
+  margin: 0 5px 0 5px;
+}
