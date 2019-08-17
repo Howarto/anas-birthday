@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Text from '../components/Text';
+import Text from './Text';
 import Navbar from './Navbar';
 import store from '../store';
 

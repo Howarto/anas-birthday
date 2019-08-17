@@ -5,7 +5,7 @@ import store from '../store';
 import { setCurrentStep } from '../actions';
 
 const Navbar = () => {
-  const { texts, currentStep } = store.getState();
+  const { currentStep } = store.getState();
 
   let buttonsToShow;
   if (isLastStep()) {
@@ -14,7 +14,10 @@ const Navbar = () => {
   else if (currentStep === 14) {
     buttonsToShow = [
       <Button key="1" onClick={ increaseCurrentStep } text="Síiii, mi vidaaaaa" />,
-      <Button key="2" text="Ni aunque me devuelvas el oro que nos robásteis" />
+      <Button key="2" onClick={ (event) => {
+        const element = event.currentTarget;
+        element.textContent = 'Oooooh qué pena que no funciona :D'
+      } } text="Ni aunque me devuelvas el oro que nos robásteis" />
     ];
   }
   else {
@@ -39,11 +42,21 @@ const replayTexts = () => {
 };
 
 const increaseCurrentStep = () => {
-  const { texts, currentStep } = store.getState();
-  if (currentStep < texts.length - 1) {
+  const { currentStep } = store.getState();
+  if (currentStepIsInTextsRange() && !isContinueButtonBlocked()) {
     const nextStep = currentStep + 1;
     store.dispatch(setCurrentStep(nextStep));
   }
 };
+
+const currentStepIsInTextsRange = () => {
+  const { texts, currentStep } = store.getState();
+  return currentStep < texts.length - 1;
+}
+
+const isContinueButtonBlocked = () => {
+  const { animatingText } = store.getState();
+  return animatingText;
+}
 
 export default Navbar;

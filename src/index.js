@@ -7,7 +7,7 @@ import store from './store';
 
 
 const render = () => {
-  fancyLog();
+  // fancyLog();
   ReactDOM.render(<App />, document.getElementById('root'));
 };
 render();
@@ -19,7 +19,7 @@ serviceWorker.unregister();
 
 store.subscribe(render);
 
-function fancyLog() {
-  console.log("%c Rendered with 👉 👉👇", "background: purple; color: #fff");
-  console.log(store.getState());
-}
+// function fancyLog() {
+//   console.log("%c Rendered with 👉 👉👇", "background: purple; color: #fff");
+//   console.log(store.getState());
+// }
