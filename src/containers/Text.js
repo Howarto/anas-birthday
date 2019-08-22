@@ -38,7 +38,7 @@ class Text extends Component {
       textareaElement.value += textToInsert[n];
       setTimeout(() => {
         this.insertTextWithAnimationImp(textareaElement, textToInsert, n + 1, callback);
-      }, this.getRandomInt(0, 0));
+      }, this.getRandomInt(0, 75));
     }
     else {
       callback();
